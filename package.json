@@ -1,5 +1,24 @@
 {
-  "dependencies": {
-    "it": "^1.1.1"
-  }
+  "name": "chiru-sql",
+  "version": "1.0.0",
+  "description": "Lightweight SQL toolkit for MySQL and PostgreSQL.",
+  "main": "index.js",
+  "keywords": [
+    "mysql",
+    "postgres",
+    "sql",
+    "orm",
+    "crud",
+    "nodejs"
+  ],
+  "author": "Chiranjib Mohapatra",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chiranjib13992/chiru-sql.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chiranjib13992/chiru-sql/issues"
+  },
+  "homepage": "https://github.com/chiranjib13992/chiru-sql#readme"
 }
