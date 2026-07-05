@@ -1,4 +1,4 @@
-export default function remove(table, where) {
+function remove(table, where) {
     const whereKeys = Object.keys(where);
 
     const whereClause = whereKeys.map(key => `${key} = ?`).join(" AND ");
@@ -8,3 +8,5 @@ export default function remove(table, where) {
         values: Object.values(where)
     };
 }
+
+module.exports = remove;

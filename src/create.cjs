@@ -1,4 +1,4 @@
-export default function create(table, data) {
+function create(table, data) {
     const keys = Object.keys(data);
     const placeholders = keys.map(() => "?").join(", ");
 
@@ -7,3 +7,5 @@ export default function create(table, data) {
         values: Object.values(data)
     };
 }
+
+module.exports = create;
