@@ -1,4 +1,4 @@
-function deleteRecord(table, where) {
+export function remove(table, where) {
     const whereKeys = Object.keys(where);
 
     const whereClause = whereKeys.map(key => `${key} = ?`).join(" AND ");
@@ -8,6 +8,3 @@ function deleteRecord(table, where) {
         values: Object.values(where)
     };
 }
-
-
-module.exports = deleteRecord;

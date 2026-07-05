@@ -1,4 +1,4 @@
-function update(table, data, where) {
+export function update(table, data, where) {
     const setKeys = Object.keys(data);
     const whereKeys = Object.keys(where);
 
@@ -13,7 +13,3 @@ function update(table, data, where) {
         ]
     };
 }
-
-module.exports = update;
-
-module.exports = update;

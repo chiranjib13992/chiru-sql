@@ -1,8 +1,16 @@
 {
   "name": "chiru-sql",
   "version": "1.0.1",
+  "type": "module",
   "description": "Lightweight SQL toolkit for MySQL and PostgreSQL.",
-  "main": "index.js",
+  "main": "./index.cjs",
+  "module": "./index.js",
+  "exports": {
+    ".": {
+      "require": "./index.cjs",
+      "import": "./index.js"
+    }
+  },
   "keywords": [
     "mysql",
     "postgres",

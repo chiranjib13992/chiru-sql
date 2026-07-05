@@ -1,5 +1,3 @@
-module.exports = {
-    create: require("./create"),
-    update: require("./update"),
-    delete: require("./delete")
-};
+export { create } from "./create.js";
+export { update } from "./update.js";
+export { remove } from "./delete.js";
