@@ -1,8 +1,11 @@
-function create(table, data){
-    const keys = Object.keys(data).join(", ");
-    const values = Object.values(data).map(ele => `'${ele}'`).join(", ");
+function create(table, data) {
+    const keys = Object.keys(data);
+    const placeholders = keys.map(() => "?").join(", ");
 
-    return `INSERT INTO ${table} (${keys}) VALUES (${values});`;
+    return {
+        sql: `INSERT INTO ${table} (${keys.join(", ")}) VALUES (${placeholders})`,
+        values: Object.values(data)
+    };
 }
 
 module.exports = create;

@@ -1,8 +1,19 @@
 function update(table, data, where) {
-    const set = Object.entries(data).map(([k, v]) => `${k} = '${v}'`).join(", ");
-    const condition = Object.entries(where).map(([k, v])=> `${k} = '${v}'`).join(", ");
+    const setKeys = Object.keys(data);
+    const whereKeys = Object.keys(where);
 
-    return `UPDATE ${table} SET ${set} WHERE ${condition};`;
+    const setClause = setKeys.map(key => `${key} = ?`).join(", ");
+    const whereClause = whereKeys.map(key => `${key} = ?`).join(" AND ");
+
+    return {
+        sql: `UPDATE ${table} SET ${setClause} WHERE ${whereClause}`,
+        values: [
+            ...Object.values(data),
+            ...Object.values(where)
+        ]
+    };
 }
+
+module.exports = update;
 
 module.exports = update;

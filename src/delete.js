@@ -1,7 +1,13 @@
 function deleteRecord(table, where) {
-    const condition = Object.entries(where).map(([k, v]) => `${k} = '${v}'`).join(" AND ");
+    const whereKeys = Object.keys(where);
 
-    return `DELETE FROM ${table} WHERE ${condition};`;
+    const whereClause = whereKeys.map(key => `${key} = ?`).join(" AND ");
+
+    return {
+        sql: `DELETE FROM ${table} WHERE ${whereClause}`,
+        values: Object.values(where)
+    };
 }
+
 
 module.exports = deleteRecord;
